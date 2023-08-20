@@ -1,0 +1,49 @@
+name: Deploy DocC
+
+on:
+    push:
+        branches:
+            - main
+    workflow_dispatch:
+
+concurrency:
+    group: docs-${{ github.ref }}
+
+permissions:
+    contents: read
+    pages: write
+    id-token: write
+
+jobs:
+    build:
+        runs-on: macos-13
+        steps:
+            - name: Select Xcode 14.3
+              run: sudo xcode-select -s /Applications/Xcode_14.3.app
+        
+            - name: Checkout
+              uses: actions/checkout@v3
+
+            - name: Build documentation
+              run: |
+                swift package \
+                    --allow-writing-to-directory ./docs \
+                    generate-documentation \
+                    --target SomeModule \
+                    --output-path ./docs \
+                    --transform-for-static-hosting \
+                    --hosting-base-path docc-practice
+
+            - name: Upload Pages artifacts
+              uses: actions/upload-artifact@v2
+              with:
+                  path: docs
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Deploy to GitHub Pages
+              id: deployment
+              uses: actions/deploy-pages@v2
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }} 
