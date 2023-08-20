@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "docc-practice",
+    name: "docc-example",
     products: [
         .library(name: "SomeModule", targets: ["SomeModule"]),
     ],
