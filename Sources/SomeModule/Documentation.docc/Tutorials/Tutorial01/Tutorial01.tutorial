@@ -1,0 +1,53 @@
+@Tutorial(time: 20) {
+    @Intro(title: "Tutorial 1") {
+        You can learn something.
+    }
+    
+    @Section(title: "First section") {
+        @ContentAndMedia {
+            This is a "ContentAndMedia".
+        }
+        @Steps {
+            @Step {
+                Create a new Swift file named "SomeStruct.swift" and import Foundation.
+                
+                @Code(name: "SomeStruct.swift", file: 01-01-code-0001.swift)
+            }
+            @Step {
+                Define a new struct called `SomeStruct`.
+                
+                @Code(name: "SomeStruct.swift", file: 01-01-code-0002.swift)
+            }
+            @Step {
+                Define a new property called `someProperty`.
+                
+                @Code(name: "SomeStruct.swift", file: 01-01-code-0003.swift)
+            }
+            That's all of first section.
+        }
+    }
+
+    @Section(title: "Second section") {
+        @ContentAndMedia {
+            This is a "ContentAndMedia".
+        }
+        @Steps {
+            @Step {
+                Create a new Swift file named "SomeClass.swift" and import Foundation.
+                
+                @Code(name: "SomeClass.swift", file: 01-02-code-0001.swift)
+            }
+            @Step {
+                Define a new class called `SomeClass`.
+                
+                @Code(name: "SomeClass.swift", file: 01-02-code-0002.swift)
+            }
+            @Step {
+                Define a new property called "someProperty".
+                
+                @Code(name: "SomeClass.swift", file: 01-02-code-0003.swift)
+            }
+            That's all of second section.
+        }
+    }
+}

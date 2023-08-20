@@ -1,0 +1,21 @@
+@Tutorials(name: "Some Module Tutorials") {
+    @Intro(title: "Some Module Tutorials") {
+        This is simple tutorials.
+    }
+    
+    @Chapter(name: "Tutorial 1") {
+        Let's dive into "Tutorial 1"!
+
+        @Image(source: "01-homepage.png")
+
+        @TutorialReference(tutorial: "doc:Tutorial01")
+    }
+
+    @Chapter(name: "Tutorial 2") {
+        Let's dive into "Tutorial 2"!
+        
+        @Image(source: "02-homepage.png")
+
+        @TutorialReference(tutorial: "doc:Tutorial02")
+    }
+}
