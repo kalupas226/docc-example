@@ -34,10 +34,10 @@ jobs:
                       --transform-for-static-hosting \
                       --hosting-base-path docc-practice
 
-            - name: Upload Pages artifacts
+            - name: Upload Pages artifact
               uses: actions/upload-pages-artifact@v2
               with:
-                  path: docs
+                  path: ./docs
     deploy:
         runs-on: ubuntu-latest
         needs: build
